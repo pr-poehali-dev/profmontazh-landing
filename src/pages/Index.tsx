@@ -1,12 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import Icon from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Index = () => {
   const [phone, setPhone] = useState('');
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const { toast } = useToast();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 500);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -419,6 +434,90 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 md:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-block bg-primary text-primary-foreground px-6 py-2 mb-4 transform rotate-1">
+              <p className="font-heading text-xl tracking-wider">ОТВЕТЫ НА ВОПРОСЫ</p>
+            </div>
+            <h2 className="font-heading text-4xl md:text-5xl text-secondary">
+              ЧАСТЫЕ ВОПРОСЫ
+            </h2>
+          </div>
+
+          <Accordion type="single" collapsible className="space-y-4">
+            {[
+              {
+                q: 'Сколько времени занимает установка одной двери?',
+                a: 'Стандартная установка межкомнатной двери занимает 2-3 часа. Если требуется демонтаж старой двери или дополнительные работы, время может увеличиться до 4-5 часов. Мы всегда работаем быстро, но качественно!'
+              },
+              {
+                q: 'Нужно ли мне покупать дверь заранее?',
+                a: 'Необязательно! Мы можем помочь с выбором и заказом двери у проверенных поставщиков. Наш замерщик приедет, произведет точные замеры и поможет подобрать оптимальный вариант под ваш бюджет и интерьер.'
+              },
+              {
+                q: 'Входит ли в стоимость установка фурнитуры?',
+                a: 'Да, установка базовой фурнитуры (ручки, защелки, петли) входит в стоимость монтажа. Если вы хотите установить дополнительную фурнитуру (замки, доводчики), это обсуждается отдельно при замере.'
+              },
+              {
+                q: 'Какая гарантия на работы?',
+                a: 'Мы предоставляем официальную гарантию 3 года на все монтажные работы. Выдаем гарантийный талон с печатью. Если в течение гарантийного срока возникнут проблемы по нашей вине — устраним бесплатно!'
+              },
+              {
+                q: 'Работаете ли вы в выходные?',
+                a: 'Да, мы работаем 7 дней в неделю! В выходные график: с 10:00 до 18:00. Можем приехать в удобное для вас время, включая вечерние часы по будням (до 20:00).'
+              },
+              {
+                q: 'Что делать, если дверь не подойдет по размеру?',
+                a: 'Именно поэтому мы настаиваем на бесплатном замере! Наш специалист произведет точные измерения проема, учтет все нюансы и подберет дверь идеально подходящего размера. Ошибки исключены.'
+              },
+              {
+                q: 'Убираете ли вы мусор после работы?',
+                a: 'Обязательно! Уборка территории после монтажа входит в стоимость услуги. Мы вынесем весь строительный мусор, упаковку и оставим после себя чистоту. Вам не придется ничего убирать!'
+              },
+              {
+                q: 'Какие районы Санкт-Петербурга вы обслуживаете?',
+                a: 'Мы работаем по всему Санкт-Петербургу и ближайшим пригородам (до 30 км от КАД). Выезд замерщика бесплатный по всей территории города. Для уточнения возможности выезда в отдаленные районы — позвоните нам!'
+              }
+            ].map((faq, i) => (
+              <AccordionItem 
+                key={i} 
+                value={`item-${i}`}
+                className="border-4 border-secondary bg-background px-6 hover:border-primary transition-colors"
+              >
+                <AccordionTrigger className="text-left hover:no-underline py-6">
+                  <div className="flex items-start gap-4">
+                    <div className="bg-primary text-primary-foreground w-10 h-10 flex items-center justify-center flex-shrink-0 font-heading text-xl">
+                      ?
+                    </div>
+                    <span className="font-heading text-xl text-secondary">{faq.q}</span>
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent className="pl-14 pr-4 pb-6 text-lg text-foreground/80">
+                  {faq.a}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+
+          <div className="mt-12 bg-accent/20 border-4 border-accent p-8 text-center">
+            <h3 className="font-heading text-3xl text-secondary mb-4">
+              НЕ НАШЛИ ОТВЕТ НА СВОЙ ВОПРОС?
+            </h3>
+            <p className="text-lg text-foreground/80 mb-6">
+              Позвоните нам или оставьте заявку — ответим на все вопросы!
+            </p>
+            <Button 
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-heading text-xl px-8 py-6 h-auto"
+              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              ЗАДАТЬ ВОПРОС
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 bg-gradient-to-b from-white to-background">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <h2 className="font-heading text-4xl md:text-5xl text-center text-secondary mb-4">
@@ -555,6 +654,16 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      {showScrollTop && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="fixed bottom-8 right-8 bg-primary hover:bg-primary/90 text-primary-foreground w-14 h-14 flex items-center justify-center shadow-2xl transform hover:scale-110 transition-all z-50 border-4 border-secondary"
+          aria-label="Наверх"
+        >
+          <Icon name="ArrowUp" size={28} />
+        </button>
+      )}
     </div>
   );
 };
