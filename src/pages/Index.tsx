@@ -39,9 +39,9 @@ const Index = () => {
       <header className="bg-secondary text-white py-3 px-4 md:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <h1 className="font-heading text-3xl md:text-4xl tracking-wider">ГЛАВМОНТАЖ</h1>
-          <a href="tel:+78121234567" className="flex items-center gap-2 hover:text-accent transition-colors">
+          <a href="tel:+78127771817" className="flex items-center gap-2 hover:text-accent transition-colors">
             <Icon name="Phone" size={20} />
-            <span className="hidden md:inline font-medium">+7 (812) 123-45-67</span>
+            <span className="hidden md:inline font-medium">8 (812) 777-18-17</span>
           </a>
         </div>
       </header>
@@ -368,24 +368,24 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             {[
               {
-                img: 'https://cdn.poehali.dev/projects/e9a65c09-6312-4fae-887d-20ffd4e64713/files/11cc58b0-d632-490d-a964-0eeb003465a4.jpg',
-                title: 'Классика',
-                desc: 'Невский район'
+                img: 'https://cdn.poehali.dev/files/dd1bf77b-6928-4718-a1a0-5efe54e7b68b.jpg',
+                title: 'Белые двери',
+                desc: 'Современный стиль'
               },
               {
-                img: 'https://cdn.poehali.dev/projects/e9a65c09-6312-4fae-887d-20ffd4e64713/files/e02497ec-719f-4673-9f09-9fb89d82c12d.jpg',
-                title: 'Минимализм',
-                desc: 'Приморский район'
+                img: 'https://cdn.poehali.dev/files/dd1bf77b-6928-4718-a1a0-5efe54e7b68b.jpg',
+                title: 'Двойная установка',
+                desc: 'Классика'
               },
               {
-                img: 'https://cdn.poehali.dev/projects/e9a65c09-6312-4fae-887d-20ffd4e64713/files/52406d3a-d6ea-45d7-bbda-810341910240.jpg',
-                title: 'Премиум',
-                desc: 'Центральный район'
+                img: 'https://cdn.poehali.dev/files/dd1bf77b-6928-4718-a1a0-5efe54e7b68b.jpg',
+                title: 'Идеальные углы',
+                desc: 'Премиум качество'
               },
               {
-                img: 'https://cdn.poehali.dev/projects/e9a65c09-6312-4fae-887d-20ffd4e64713/files/1a94ee80-ccc0-441d-b668-766f4bb25ded.jpg',
-                title: 'Современная',
-                desc: 'Московский район'
+                img: 'https://cdn.poehali.dev/files/dd1bf77b-6928-4718-a1a0-5efe54e7b68b.jpg',
+                title: 'Чистая работа',
+                desc: 'Минимализм'
               }
             ].map((work, i) => (
               <div 
@@ -669,7 +669,7 @@ const Index = () => {
             <div>
               <h4 className="font-heading text-xl mb-3">КОНТАКТЫ</h4>
               <div className="space-y-2 text-white/70">
-                <p>+7 (812) 123-45-67</p>
+                <p>8 (812) 777-18-17</p>
                 <p>info@glavmontazh.ru</p>
               </div>
             </div>
