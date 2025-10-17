@@ -89,7 +89,7 @@ const Index = () => {
             <div className="relative animate-slide-in-right">
               <div className="relative z-10 transform hover:scale-105 transition-transform duration-300">
                 <img 
-                  src="https://cdn.poehali.dev/projects/e9a65c09-6312-4fae-887d-20ffd4e64713/files/1caf18ba-c470-4d56-84fe-2749e6be612f.jpg" 
+                  src="https://cdn.poehali.dev/projects/e9a65c09-6312-4fae-887d-20ffd4e64713/files/2f0eb837-6b58-4b85-800e-a8bc7ec6cecb.jpg" 
                   alt="Мастер по установке дверей" 
                   className="w-full rounded-lg shadow-2xl"
                 />
