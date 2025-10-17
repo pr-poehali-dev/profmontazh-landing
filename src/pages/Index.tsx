@@ -180,6 +180,128 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4 md:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-block bg-primary text-primary-foreground px-6 py-2 mb-4 transform rotate-2">
+              <p className="font-heading text-xl tracking-wider">ПРОИЗВОДСТВЕННЫЙ</p>
+            </div>
+            <h2 className="font-heading text-4xl md:text-5xl text-secondary">
+              ПРАЙС-ЛИСТ
+            </h2>
+            <p className="text-lg text-muted-foreground mt-2">
+              Честные цены без накруток
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              {
+                title: 'СТАНДАРТНАЯ УСТАНОВКА',
+                price: '2 500',
+                features: [
+                  'Установка межкомнатной двери',
+                  'Монтаж коробки и наличников',
+                  'Установка фурнитуры',
+                  'Уборка после работ',
+                  'Гарантия 3 года'
+                ],
+                badge: 'ПОПУЛЯРНО'
+              },
+              {
+                title: 'УСТАНОВКА + ДЕМОНТАЖ',
+                price: '3 500',
+                features: [
+                  'Демонтаж старой двери',
+                  'Вывоз строительного мусора',
+                  'Установка новой двери',
+                  'Монтаж коробки и наличников',
+                  'Гарантия 3 года'
+                ],
+                badge: null
+              },
+              {
+                title: 'УСТАНОВКА С РАСШИРЕНИЕМ',
+                price: '4 500',
+                features: [
+                  'Расширение дверного проема',
+                  'Демонтаж старой двери',
+                  'Установка новой двери',
+                  'Полная отделка откосов',
+                  'Гарантия 3 года'
+                ],
+                badge: null
+              },
+              {
+                title: 'КОМПЛЕКСНЫЙ МОНТАЖ',
+                price: 'от 6 000',
+                features: [
+                  'Любые дополнительные работы',
+                  'Нестандартные проемы',
+                  'Сложная геометрия',
+                  'Индивидуальный подход',
+                  'Гарантия 3 года'
+                ],
+                badge: 'ПОД ЗАКАЗ'
+              }
+            ].map((service, i) => (
+              <div 
+                key={i}
+                className="relative bg-background border-4 border-secondary p-6 animate-fade-in hover:shadow-xl transition-shadow"
+                style={{ animationDelay: `${i * 0.1}s` }}
+              >
+                {service.badge && (
+                  <div className="absolute -top-3 -right-3 bg-accent text-secondary px-4 py-1 font-heading text-sm transform rotate-6 shadow-lg">
+                    {service.badge}
+                  </div>
+                )}
+                
+                <div className="mb-4 pb-4 border-b-2 border-primary">
+                  <h3 className="font-heading text-2xl text-secondary mb-2">
+                    {service.title}
+                  </h3>
+                  <div className="flex items-end gap-2">
+                    <span className="font-heading text-4xl text-primary">{service.price}</span>
+                    <span className="text-xl text-muted-foreground mb-1">₽</span>
+                  </div>
+                </div>
+
+                <ul className="space-y-3 mb-6">
+                  {service.features.map((feature, j) => (
+                    <li key={j} className="flex items-start gap-2">
+                      <Icon name="CheckCircle" size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
+                      <span className="text-foreground/80">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <Button 
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-heading text-lg py-6"
+                  onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  ЗАКАЗАТЬ
+                </Button>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-12 bg-accent/20 border-l-8 border-accent p-6">
+            <div className="flex items-start gap-4">
+              <Icon name="Info" size={32} className="text-accent flex-shrink-0" />
+              <div>
+                <h3 className="font-heading text-2xl text-secondary mb-2">ВАЖНАЯ ИНФОРМАЦИЯ</h3>
+                <ul className="space-y-2 text-foreground/80">
+                  <li>• Бесплатный выезд замерщика по Санкт-Петербургу</li>
+                  <li>• Окончательная цена рассчитывается после замера</li>
+                  <li>• Оплата только после полной сдачи работ</li>
+                  <li>• Работаем с наличными и картами</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 bg-secondary text-white">
         <div className="max-w-5xl mx-auto px-4 md:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
