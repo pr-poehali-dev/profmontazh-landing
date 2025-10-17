@@ -322,6 +322,16 @@ const Index = () => {
             </div>
           </div>
 
+          <div className="mt-12 text-center">
+            <Button 
+              className="bg-accent hover:bg-accent/90 text-secondary font-heading text-2xl py-8 px-12 border-4 border-secondary transform hover:scale-105 transition-transform"
+              onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              <Icon name="Calculator" size={28} className="mr-3" />
+              РАССЧИТАТЬ СТОИМОСТЬ
+            </Button>
+          </div>
+
           <div className="mt-12 bg-accent/20 border-l-8 border-accent p-6">
             <div className="flex items-start gap-4">
               <Icon name="Info" size={32} className="text-accent flex-shrink-0" />
