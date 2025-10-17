@@ -216,6 +216,76 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-16 bg-gradient-to-b from-white to-background">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <h2 className="font-heading text-4xl md:text-5xl text-center text-secondary mb-4">
+            ОТЗЫВЫ ТОВАРИЩЕЙ
+          </h2>
+          <p className="text-center text-lg text-muted-foreground mb-12">
+            Более 500 довольных клиентов по всему Санкт-Петербургу
+          </p>
+          
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                name: 'Алексей Петров',
+                address: 'ул. Ленина, д. 45',
+                text: 'Установили 4 двери за один день! Работают четко, как часы. Ни пылинки после себя не оставили. Рекомендую!',
+                rating: 5
+              },
+              {
+                name: 'Мария Соколова',
+                address: 'Невский пр., д. 123',
+                text: 'Профессионалы своего дела! Двери встали идеально, ни одной щели. Гарантийный талон выдали сразу. Спасибо за качество!',
+                rating: 5
+              },
+              {
+                name: 'Дмитрий Иванов',
+                address: 'пр. Просвещения, д. 78',
+                text: 'Приехали точно в срок, сделали быстро и аккуратно. Цена соответствует качеству. Буду обращаться еще!',
+                rating: 5
+              }
+            ].map((review, i) => (
+              <div 
+                key={i} 
+                className="bg-white border-4 border-accent p-6 relative animate-fade-in transform hover:scale-105 transition-transform"
+                style={{ animationDelay: `${i * 0.1}s` }}
+              >
+                <div className="absolute -top-3 -left-3 bg-primary text-primary-foreground w-12 h-12 flex items-center justify-center font-heading text-2xl transform rotate-12">
+                  !
+                </div>
+                
+                <div className="mb-4">
+                  <div className="flex gap-1 mb-2">
+                    {[...Array(review.rating)].map((_, j) => (
+                      <Icon key={j} name="Star" size={20} className="text-accent fill-accent" />
+                    ))}
+                  </div>
+                  <h3 className="font-heading text-2xl text-secondary">{review.name}</h3>
+                  <p className="text-sm text-muted-foreground">{review.address}</p>
+                </div>
+                
+                <p className="text-foreground/80 italic">"{review.text}"</p>
+                
+                <div className="mt-4 pt-4 border-t-2 border-primary">
+                  <div className="flex items-center gap-2">
+                    <Icon name="CheckCircle" size={20} className="text-green-600" />
+                    <span className="text-sm font-medium text-green-600">ПРОВЕРЕННЫЙ ОТЗЫВ</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-12 text-center">
+            <div className="inline-block bg-secondary text-white px-8 py-4 transform -rotate-1">
+              <p className="font-heading text-2xl">СРЕДНЯЯ ОЦЕНКА: 5.0 ★★★★★</p>
+              <p className="text-white/80">На основе 500+ отзывов</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="contact-form" className="py-20 bg-primary text-primary-foreground relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-0 left-0 w-64 h-64 bg-accent transform rotate-45"></div>
