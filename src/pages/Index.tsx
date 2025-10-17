@@ -486,6 +486,68 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-16 bg-gradient-to-b from-white to-muted/20">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-block bg-secondary text-white px-6 py-2 mb-4 transform -rotate-1">
+              <p className="font-heading text-xl tracking-wider">ПРОФЕССИОНАЛЫ СВОЕГО ДЕЛА</p>
+            </div>
+            <h2 className="font-heading text-4xl md:text-5xl text-secondary mb-4">
+              НАША КОМАНДА
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Опытные мастера с многолетним стажем
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {[
+              {
+                img: 'https://cdn.poehali.dev/projects/e9a65c09-6312-4fae-887d-20ffd4e64713/files/3b3f9fdd-bc7f-4d5a-ad1a-5aa28f9eca79.jpg',
+                name: 'Александр',
+                role: 'Старший мастер',
+                experience: '12 лет опыта'
+              },
+              {
+                img: 'https://cdn.poehali.dev/projects/e9a65c09-6312-4fae-887d-20ffd4e64713/files/0cdd477e-5e7e-4800-a165-d297e0a5957c.jpg',
+                name: 'Дмитрий',
+                role: 'Мастер-установщик',
+                experience: '8 лет опыта'
+              },
+              {
+                img: 'https://cdn.poehali.dev/projects/e9a65c09-6312-4fae-887d-20ffd4e64713/files/13991051-d1b1-4dd9-a68c-acf602778abc.jpg',
+                name: 'Михаил',
+                role: 'Мастер-установщик',
+                experience: '6 лет опыта'
+              }
+            ].map((member, i) => (
+              <div 
+                key={i} 
+                className="bg-white border-4 border-secondary p-6 animate-fade-in hover:shadow-xl transition-all group"
+                style={{ animationDelay: `${i * 0.15}s` }}
+              >
+                <div className="relative overflow-hidden rounded-lg mb-4">
+                  <img 
+                    src={member.img} 
+                    alt={member.name}
+                    className="w-full h-80 object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute top-4 right-4 bg-accent text-secondary px-3 py-1 font-heading text-sm transform rotate-3">
+                    ПРО
+                  </div>
+                </div>
+                <h3 className="font-heading text-2xl text-secondary mb-1">{member.name}</h3>
+                <p className="text-primary font-semibold mb-2">{member.role}</p>
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <Icon name="Award" size={18} />
+                  <span>{member.experience}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 md:px-8">
           <div className="text-center mb-12">
