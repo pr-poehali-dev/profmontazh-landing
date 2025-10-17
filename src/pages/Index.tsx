@@ -302,6 +302,87 @@ const Index = () => {
         </div>
       </section>
 
+      <section className="py-16 bg-gradient-to-b from-background to-white">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="text-center mb-12">
+            <div className="inline-block mb-4">
+              <div className="bg-secondary text-white px-6 py-2 transform -rotate-2 inline-block">
+                <p className="font-heading text-xl tracking-wider">ДОКУМЕНТАЛЬНОЕ ПОДТВЕРЖДЕНИЕ</p>
+              </div>
+            </div>
+            <h2 className="font-heading text-4xl md:text-5xl text-secondary">
+              НАШИ РАБОТЫ
+            </h2>
+            <p className="text-lg text-muted-foreground mt-2">
+              500+ выполненных проектов по всему городу
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            {[
+              {
+                img: 'https://cdn.poehali.dev/projects/e9a65c09-6312-4fae-887d-20ffd4e64713/files/11cc58b0-d632-490d-a964-0eeb003465a4.jpg',
+                title: 'Классика',
+                desc: 'Невский район'
+              },
+              {
+                img: 'https://cdn.poehali.dev/projects/e9a65c09-6312-4fae-887d-20ffd4e64713/files/e02497ec-719f-4673-9f09-9fb89d82c12d.jpg',
+                title: 'Минимализм',
+                desc: 'Приморский район'
+              },
+              {
+                img: 'https://cdn.poehali.dev/projects/e9a65c09-6312-4fae-887d-20ffd4e64713/files/52406d3a-d6ea-45d7-bbda-810341910240.jpg',
+                title: 'Премиум',
+                desc: 'Центральный район'
+              },
+              {
+                img: 'https://cdn.poehali.dev/projects/e9a65c09-6312-4fae-887d-20ffd4e64713/files/1a94ee80-ccc0-441d-b668-766f4bb25ded.jpg',
+                title: 'Современная',
+                desc: 'Московский район'
+              }
+            ].map((work, i) => (
+              <div 
+                key={i}
+                className="group relative overflow-hidden border-4 border-secondary animate-fade-in hover:border-primary transition-colors"
+                style={{ animationDelay: `${i * 0.1}s` }}
+              >
+                <div className="aspect-[3/4] overflow-hidden">
+                  <img 
+                    src={work.img} 
+                    alt={work.title}
+                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-secondary via-secondary/95 to-transparent p-4">
+                  <h3 className="font-heading text-2xl text-white">{work.title}</h3>
+                  <p className="text-white/80">{work.desc}</p>
+                </div>
+
+                <div className="absolute top-4 right-4 bg-accent text-secondary w-12 h-12 rounded-full flex items-center justify-center font-heading text-xl transform rotate-12 group-hover:rotate-0 transition-transform">
+                  ✓
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="bg-primary text-primary-foreground p-6 text-center transform hover:scale-105 transition-transform">
+              <div className="font-heading text-5xl mb-2">500+</div>
+              <p className="text-lg">Установленных дверей</p>
+            </div>
+            <div className="bg-accent text-secondary p-6 text-center transform hover:scale-105 transition-transform">
+              <div className="font-heading text-5xl mb-2">8</div>
+              <p className="text-lg">Лет на рынке</p>
+            </div>
+            <div className="bg-secondary text-white p-6 text-center transform hover:scale-105 transition-transform">
+              <div className="font-heading text-5xl mb-2">100%</div>
+              <p className="text-lg">Довольных клиентов</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 bg-secondary text-white">
         <div className="max-w-5xl mx-auto px-4 md:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
