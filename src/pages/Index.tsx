@@ -209,95 +209,117 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              {
-                title: 'СТАНДАРТНАЯ УСТАНОВКА',
-                price: '2 500',
-                features: [
-                  'Установка межкомнатной двери',
-                  'Монтаж коробки и наличников',
-                  'Установка фурнитуры',
-                  'Уборка после работ',
-                  'Гарантия 3 года'
-                ],
-                badge: 'ПОПУЛЯРНО'
-              },
-              {
-                title: 'УСТАНОВКА + ДЕМОНТАЖ',
-                price: '3 500',
-                features: [
-                  'Демонтаж старой двери',
-                  'Вывоз строительного мусора',
-                  'Установка новой двери',
-                  'Монтаж коробки и наличников',
-                  'Гарантия 3 года'
-                ],
-                badge: null
-              },
-              {
-                title: 'УСТАНОВКА С РАСШИРЕНИЕМ',
-                price: '4 500',
-                features: [
-                  'Расширение дверного проема',
-                  'Демонтаж старой двери',
-                  'Установка новой двери',
-                  'Полная отделка откосов',
-                  'Гарантия 3 года'
-                ],
-                badge: null
-              },
-              {
-                title: 'КОМПЛЕКСНЫЙ МОНТАЖ',
-                price: 'от 6 000',
-                features: [
-                  'Любые дополнительные работы',
-                  'Нестандартные проемы',
-                  'Сложная геометрия',
-                  'Индивидуальный подход',
-                  'Гарантия 3 года'
-                ],
-                badge: 'ПОД ЗАКАЗ'
-              }
-            ].map((service, i) => (
-              <div 
-                key={i}
-                className="relative bg-background border-4 border-secondary p-6 animate-fade-in hover:shadow-xl transition-shadow"
-                style={{ animationDelay: `${i * 0.1}s` }}
-              >
-                {service.badge && (
-                  <div className="absolute -top-3 -right-3 bg-accent text-secondary px-4 py-1 font-heading text-sm transform rotate-6 shadow-lg">
-                    {service.badge}
+          <div className="space-y-8">
+            <div className="bg-background border-4 border-secondary p-6">
+              <h3 className="font-heading text-3xl text-secondary mb-6 flex items-center gap-3">
+                <Icon name="Wrench" size={32} className="text-primary" />
+                СТАНДАРТНЫЕ ВИДЫ РАБОТ
+              </h3>
+              
+              <div className="space-y-4">
+                <div className="bg-accent/20 border-l-4 border-accent p-5">
+                  <div className="flex justify-between items-start mb-3">
+                    <div>
+                      <h4 className="font-heading text-2xl text-secondary mb-2">Установка дверного блока</h4>
+                      <div className="inline-block bg-accent text-secondary px-3 py-1 font-heading text-sm mb-3">
+                        АКЦИЯ!
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="font-heading text-3xl text-primary">3 850 ₽</div>
+                    </div>
                   </div>
-                )}
-                
-                <div className="mb-4 pb-4 border-b-2 border-primary">
-                  <h3 className="font-heading text-2xl text-secondary mb-2">
-                    {service.title}
-                  </h3>
-                  <div className="flex items-end gap-2">
-                    <span className="font-heading text-4xl text-primary">{service.price}</span>
-                    <span className="text-xl text-muted-foreground mb-1">₽</span>
+                  <p className="text-sm font-semibold mb-2">В установку входит:</p>
+                  <ul className="space-y-1 text-sm text-foreground/80">
+                    <li>• врезка 2-х петель, врезка ручки</li>
+                    <li>• сборка дверной коробки, установка дверного блока</li>
+                    <li>• установка наличника с 2-х сторон</li>
+                  </ul>
+                </div>
+
+                {[
+                  { title: 'Наценка за установку белой двери (в том числе эмаль)', price: '600' },
+                  { title: 'Установка откатной двери в готовый проем', price: '4 900' },
+                  { title: 'Установка нестандартной межкомнатной двери', price: '4 100' },
+                  { title: 'Скрытая установка', subtitle: 'Не будет видно крепежа, коробка останется без следов монтажа.', price: '750' },
+                  { title: 'Установка скрытой (Invisible) двери', price: '4 850' },
+                  { title: 'Установка скрытых петель', price: '750' },
+                  { title: 'Регулировка скрытых петель', price: '300' },
+                  { title: 'Демонтаж старой двери (деревянный)', price: '650' },
+                  { title: 'Установка портала', price: '3 500' },
+                  { title: 'Выезд мастера на установку одной межкомнатной двери', price: '1 550' },
+                  { title: 'Платная парковка на 1 день (там, где это необходимо)', price: '1 000' },
+                ].map((item, i) => (
+                  <div key={i} className="flex justify-between items-start py-3 border-b border-secondary/20">
+                    <div className="flex-1">
+                      <p className="font-medium text-secondary">{item.title}</p>
+                      {item.subtitle && <p className="text-sm text-foreground/60 mt-1">{item.subtitle}</p>}
+                    </div>
+                    <div className="font-heading text-xl text-primary ml-4 whitespace-nowrap">{item.price} ₽</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="bg-background border-4 border-secondary p-6">
+              <h3 className="font-heading text-3xl text-secondary mb-6 flex items-center gap-3">
+                <Icon name="Settings" size={32} className="text-primary" />
+                ДОПОЛНИТЕЛЬНЫЕ РАБОТЫ
+              </h3>
+              
+              <div className="space-y-4">
+                {[
+                  { title: 'Установка 1-го комплекта доборного бруса', price: '1 200' },
+                  { title: 'Сращивание доборного бруса', price: '1 000' },
+                  { title: 'Установка 1-го комплекта доборного бруса со стороны петель', subtitle: 'С обратной, нестандартной стороны. Не рекомендуется.', price: '3 500' },
+                  { title: 'Установка порога', price: '600' },
+                  { title: 'Врезка замка с ключевиной', price: '800' },
+                  { title: 'Установка нестандартных наличников (фигурных или широких) - за один проем', price: '500' },
+                  { title: 'Врезка сантехнического замка', price: '800' },
+                ].map((item, i) => (
+                  <div key={i} className="flex justify-between items-start py-3 border-b border-secondary/20">
+                    <div className="flex-1">
+                      <p className="font-medium text-secondary">{item.title}</p>
+                      {item.subtitle && <p className="text-sm text-foreground/60 mt-1">{item.subtitle}</p>}
+                    </div>
+                    <div className="font-heading text-xl text-primary ml-4 whitespace-nowrap">{item.price} ₽</div>
+                  </div>
+                ))}
+
+                <div className="pt-3">
+                  <p className="font-medium text-secondary mb-3">Расширение/уменьшение проёма</p>
+                  <p className="text-sm text-foreground/60 mb-3 italic">в зависимости от сложности</p>
+                  <div className="space-y-2 pl-4">
+                    <div className="flex justify-between items-center py-2">
+                      <p className="text-secondary">Материал стен: пеноблок</p>
+                      <div className="font-heading text-xl text-primary whitespace-nowrap">от 500 ₽</div>
+                    </div>
+                    <div className="flex justify-between items-center py-2">
+                      <p className="text-secondary">Материал стен: кирпич</p>
+                      <div className="font-heading text-xl text-primary whitespace-nowrap">от 1 500 ₽</div>
+                    </div>
+                    <div className="flex justify-between items-center py-2">
+                      <p className="text-secondary">Материал стен: ж/б</p>
+                      <div className="font-heading text-xl text-primary whitespace-nowrap">от 2 000 ₽</div>
+                    </div>
                   </div>
                 </div>
 
-                <ul className="space-y-3 mb-6">
-                  {service.features.map((feature, j) => (
-                    <li key={j} className="flex items-start gap-2">
-                      <Icon name="CheckCircle" size={20} className="text-green-600 flex-shrink-0 mt-0.5" />
-                      <span className="text-foreground/80">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <Button 
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-heading text-lg py-6"
-                  onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
-                >
-                  ЗАКАЗАТЬ
-                </Button>
+                {[
+                  { title: 'Уменьшение полотна двери с одной стороны', price: '950' },
+                  { title: 'Пропил вдоль деревянного наличника (одна стойка)', price: '350' },
+                  { title: 'Врезка дополнительной фурнитуры (ригель, петля, стопор)', price: '250' },
+                  { title: 'Выезд установщика в пригород (дальше, чем КАД)', price: '60 ₽ за 1 км' },
+                ].map((item, i) => (
+                  <div key={i} className="flex justify-between items-start py-3 border-b border-secondary/20">
+                    <div className="flex-1">
+                      <p className="font-medium text-secondary">{item.title}</p>
+                    </div>
+                    <div className="font-heading text-xl text-primary ml-4 whitespace-nowrap">{item.price}</div>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
 
           <div className="mt-12 bg-accent/20 border-l-8 border-accent p-6">
