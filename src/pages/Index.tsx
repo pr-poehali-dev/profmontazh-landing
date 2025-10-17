@@ -101,41 +101,61 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-gradient-to-b from-white to-muted/20">
         <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="text-center mb-12">
+            <h2 className="font-heading text-4xl md:text-5xl text-secondary mb-4">
+              ПОЧЕМУ МЫ?
+            </h2>
+            <p className="text-xl text-muted-foreground">
+              Сравните результат и сделайте выбор
+            </p>
+          </div>
+          
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-destructive/10 p-8 border-l-8 border-destructive animate-fade-in">
-              <h3 className="font-heading text-3xl text-secondary mb-6">БЕЗ НАС:</h3>
-              <ul className="space-y-4">
+            <div className="relative bg-gradient-to-br from-red-50 to-red-100 p-10 rounded-lg border-4 border-red-300 animate-fade-in shadow-lg transform hover:scale-105 transition-all">
+              <div className="absolute -top-4 left-8 bg-destructive text-white px-6 py-2 font-heading text-xl transform -rotate-2 shadow-md">
+                БЕЗ НАС
+              </div>
+              <ul className="space-y-5 mt-4">
                 {[
                   'Кривая установка?',
                   'Щели и скрипы?',
                   'Потратили время зря?',
                   'Дверь не закрывается?'
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-lg">
-                    <Icon name="X" size={24} className="text-destructive flex-shrink-0" />
-                    <span>{item}</span>
+                  <li key={i} className="flex items-start gap-4 text-lg">
+                    <div className="bg-destructive text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Icon name="X" size={20} />
+                    </div>
+                    <span className="font-medium text-secondary pt-1.5">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
             
-            <div className="bg-green-50 p-8 border-l-8 border-green-600 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-              <h3 className="font-heading text-3xl text-secondary mb-6">С НАМИ:</h3>
-              <ul className="space-y-4">
+            <div className="relative bg-gradient-to-br from-green-50 to-green-100 p-10 rounded-lg border-4 border-green-400 animate-fade-in shadow-xl transform hover:scale-105 transition-all" style={{ animationDelay: '0.2s' }}>
+              <div className="absolute -top-4 left-8 bg-green-600 text-white px-6 py-2 font-heading text-xl transform rotate-2 shadow-md">
+                С НАМИ
+              </div>
+              <ul className="space-y-5 mt-4">
                 {[
                   'Идеальный притвор!',
                   'Тишина и плавность хода!',
                   'Гарантия 1 год!',
                   'Работа за 1 день!'
                 ].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3 text-lg">
-                    <Icon name="Check" size={24} className="text-green-600 flex-shrink-0" />
-                    <span className="font-medium">{item}</span>
+                  <li key={i} className="flex items-start gap-4 text-lg">
+                    <div className="bg-green-600 text-white rounded-full w-10 h-10 flex items-center justify-center flex-shrink-0 mt-0.5">
+                      <Icon name="Check" size={20} />
+                    </div>
+                    <span className="font-bold text-secondary pt-1.5">{item}</span>
                   </li>
                 ))}
               </ul>
+              <div className="absolute -bottom-3 -right-3 bg-accent text-secondary w-16 h-16 rounded-full flex items-center justify-center font-heading text-2xl transform rotate-12 shadow-lg">
+                ✓
+              </div>
             </div>
           </div>
         </div>
