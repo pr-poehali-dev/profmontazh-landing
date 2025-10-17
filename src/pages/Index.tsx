@@ -38,7 +38,7 @@ const Index = () => {
     <div className="min-h-screen bg-background font-body">
       <header className="bg-secondary text-white py-3 px-4 md:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <h1 className="font-heading text-3xl md:text-4xl tracking-wider">ПРОФМОНТАЖ</h1>
+          <h1 className="font-heading text-3xl md:text-4xl tracking-wider">ГЛАВМОНТАЖ</h1>
           <a href="tel:+78121234567" className="flex items-center gap-2 hover:text-accent transition-colors">
             <Icon name="Phone" size={20} />
             <span className="hidden md:inline font-medium">+7 (812) 123-45-67</span>
@@ -631,14 +631,14 @@ const Index = () => {
         <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="grid md:grid-cols-3 gap-8">
             <div>
-              <h3 className="font-heading text-2xl mb-3">ПРОФМОНТАЖ</h3>
+              <h3 className="font-heading text-2xl mb-3">ГЛАВМОНТАЖ</h3>
               <p className="text-white/70">Установка межкомнатных дверей в Санкт-Петербурге</p>
             </div>
             <div>
               <h4 className="font-heading text-xl mb-3">КОНТАКТЫ</h4>
               <div className="space-y-2 text-white/70">
                 <p>+7 (812) 123-45-67</p>
-                <p>info@profmontazh.ru</p>
+                <p>info@glavmontazh.ru</p>
               </div>
             </div>
             <div>
@@ -650,7 +650,7 @@ const Index = () => {
             </div>
           </div>
           <div className="border-t border-white/20 mt-8 pt-6 text-center text-white/60">
-            <p>© 2024 Профмонтаж. Все права защищены.</p>
+            <p>© 2024 Главмонтаж. Все права защищены.</p>
           </div>
         </div>
       </footer>
