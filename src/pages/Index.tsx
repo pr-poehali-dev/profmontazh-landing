@@ -81,7 +81,7 @@ const Index = () => {
                   className="bg-primary hover:bg-primary/90 text-primary-foreground font-heading text-xl px-8 py-6 h-auto transform hover:scale-105 transition-transform"
                   onClick={() => document.getElementById('contact-form')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  ВЫЗВАТЬ БЕСПЛАТНЫЙ ЗАМЕР!
+                  ЗАКАЗАТЬ УСТАНОВКУ ДВЕРЕЙ!
                 </Button>
               </div>
             </div>
